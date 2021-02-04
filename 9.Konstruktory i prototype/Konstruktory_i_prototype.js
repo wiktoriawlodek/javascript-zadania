@@ -115,7 +115,31 @@ calculator2.clear();
 /*ZADANIE 3. (GRA) Stwórz konstruktor z dwoma metodami. Jedna co sekundę ma zminiać zawartość pola typu number na losową liczbę z zakresu 1-10. Druga ma sprawdzać czy liczba jest większa o 5. Jeśli tak to program ma zakończyć działanie. Obie metody muszą być wywołane na różnych obiektach i wymianiać dane przy pomocy pola prototype.*/
 
 
+function Constructor() { 
+    this.number = 0;
+    this.myInterval = undefined;
+    
+    this.init = function(){
+        this.myInterval = setInterval(() => {
+            this.setNumber()
+        }, 1000);
+    }
+    
+    this.setNumber = function() { 
+        this.number = Math.floor(Math.random() * 10);
+        this.checkNumber();
+    }
+    
+    this.checkNumber = function() { 
+        console.log(this.number)
+        if(this.number > 5) {
+            clearInterval(this.myInterval);
+        }     
+    }
+}
 
+const newProg = new Constructor();
+newProg.init();
 
 
 
