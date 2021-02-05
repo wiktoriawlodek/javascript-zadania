@@ -43,4 +43,5 @@ const show = (className, idName) => {
 	console.log(d);
 	console.log(e);
 }
+show("list", "spans")
 
