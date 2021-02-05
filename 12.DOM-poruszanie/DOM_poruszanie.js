@@ -67,15 +67,7 @@ Tylko pierwszy element listy
 tylko ostatni element listy
 Parzyste elementy listy
 Wszystkie elementy listy
-Żaden z elementów - tylko cała lista
-Zadanie 6
-W div id="ex6" zaczynając od tego diva znajdź i zapisz do zmiennych następujące kombinacje:
-
-pierwsze dziecko -> pierwsze dziecko -> pierwsze dziecko
-pierwsze dziecko -> rodzic -> pierwsze dziecko -> pierwsze dziecko -> brat -> rodzic
-rodzic -> pierwsze dziecko -> rodzic -> drugie dziecko -> pierwsze dziecko -> pierwsze dziecko -> pierwsze dziecko*/
-
-
+Żaden z elementów - tylko cała lista*/
 
 
 const rect = document.querySelectorAll("#ex5 div");
@@ -98,3 +90,25 @@ rect.forEach(rect => rect.addEventListener("mouseover", (e) => {
     
     list.style.backgroundColor
 }))
+
+
+/*ZADANIE 6. W div id="ex6" zaczynając od tego diva znajdź i zapisz do zmiennych następujące kombinacje:
+
+pierwsze dziecko -> pierwsze dziecko -> pierwsze dziecko
+pierwsze dziecko -> rodzic -> pierwsze dziecko -> pierwsze dziecko -> brat -> rodzic
+rodzic -> pierwsze dziecko -> rodzic -> drugie dziecko -> pierwsze dziecko -> pierwsze dziecko -> pierwsze dziecko*/
+
+
+let task6 = document.querySelector("#ex6");
+
+let firstOne = task6.firstElementChild.firstElementChild.firstElementChild;
+
+console.log(firstOne);
+
+let secondOne = task6.firstElementChild.parentElement.firstElementChild.firstElementChild.nextElementSibling.parentElement;
+
+console.log(secondOne);
+
+let thirdOne = task6.parentElement.firstElementChild.parentElement.children[1].firstElementChild.firstElementChild.firstElementChild;
+
+console.log(thirdOne);
